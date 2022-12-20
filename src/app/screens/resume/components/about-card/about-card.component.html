@@ -1,0 +1,12 @@
+<mat-card class="mat-mdc-elevation-specific mat-elevation-z6 overflow-hidden">
+  <mat-card-header>
+    <mat-card-title>Немного о себе</mat-card-title>
+    <mat-card-subtitle>About me</mat-card-subtitle>
+  </mat-card-header>
+  <mat-divider class="mx-3"></mat-divider>
+  <mat-card-content class="lead my-4" [innerHTML]="html">
+  </mat-card-content>
+  <mat-card-footer>
+    <mat-progress-bar [value]="80" [bufferValue]="100"></mat-progress-bar>
+  </mat-card-footer>
+</mat-card>

@@ -1,0 +1,91 @@
+@use "./styles/snow";
+@use "./styles/marquee";
+// @use "./styles/circles";
+
+@use '@angular/material'as mat;
+
+@include mat.core();
+
+$my-primary: mat.define-palette(mat.$indigo-palette, 500);
+$my-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+$my-theme: mat.define-light-theme((color: (primary: $my-primary,
+      accent: $my-accent,
+    ),
+    typography: mat.define-typography-config($font-family: roboto,
+    )));
+
+@include mat.all-component-themes($my-theme);
+
+:host {
+  display: block;
+  height: 0px;
+}
+
+.resume-content-container {
+  position: relative;
+  margin-top: -200px;
+}
+
+/** Header & Footer */
+
+header,
+footer {
+  position: relative;
+  min-height: 400px;
+
+  width: 100%;
+  background-size: 300% 300%;
+  background-image: linear-gradient(-45deg,
+      var(--bs-primary) 0%,
+      var(--bs-info) 25%,
+      var(--bs-primary) 50%,
+      var(--bs-primary) 100%);
+  animation: header 20s ease infinite;
+}
+
+.resume-header-headline {
+  text-shadow: 0px 6px 26px #fff;
+}
+
+@keyframes header {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/** Section: Brands */
+
+section.resume-brands-section {
+  .marquee__content {
+    animation: marquee 30s linear infinite;
+  }
+
+  mat-icon,
+  i {
+    font-size: 128px;
+  }
+}
+
+/** Material Design Restyle */
+
+.mat-mdc-progress-spinner {
+  --mdc-circular-progress-active-indicator-color: var(--bs-blue);
+}
+
+.mat-mdc-progress-bar {
+  --mdc-linear-progress-active-indicator-color: var(--bs-blue);
+}
+
+.mat-mdc-standard-chip.mat-primary.mat-mdc-chip-selected,
+.mat-mdc-standard-chip.mat-primary.mat-mdc-chip-highlighted {
+  --mdc-chip-elevated-container-color: var(--bs-blue);
+}

@@ -1,0 +1,22 @@
+<mat-card class="resume-skills-card mat-mdc-elevation-specific mat-elevation-z6 overflow-hidden h-100">
+  <mat-card-header>
+    <mat-card-title>Основные навыки</mat-card-title>
+    <mat-card-subtitle>Skills</mat-card-subtitle>
+  </mat-card-header>
+  <mat-divider class="mx-3"></mat-divider>
+  <mat-card-content class="my-4">
+    <div class="row">
+      <div *ngFor="let skill of skills" class="col">
+        <div class="spinner-container d-flex align-items-center justify-content-center">
+          <mat-spinner [value]="skill.progress" mode="determinate" diameter="150"></mat-spinner>
+          <span class="position-absolute d-flex flex-column text-center">
+            <b>{{ skill.title }}</b>
+            <small class="bottom-text text-muted position-absolute w-100">
+              {{ skill.progress }}%
+            </small>
+          </span>
+        </div>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>

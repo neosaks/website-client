@@ -1,0 +1,44 @@
+<ng-template #left let-item>
+  <div class="col-12 col-md-6 tile p-5 text-end">
+    <div class="h3">
+      {{ item?.companyName }}
+    </div>
+    <div class="text-muted">
+      {{ item?.placeJob }}
+    </div>
+    <mat-divider class="my-2"></mat-divider>
+    <div>
+      <span class="lead" [innerHTML]="item?.description">
+      </span>
+    </div>
+  </div>
+  <div class="col-12 col-md-6 tile p-0 overflow-hidden order-first order-md-last">
+    <img [src]="item?.imageUrl" class="w-100 h-100">
+  </div>
+</ng-template>
+
+<ng-template #right let-item>
+  <div class="col-12 col-md-6 tile p-0 overflow-hidden">
+    <img [src]="item?.imageUrl" class="w-100 h-100">
+  </div>
+  <div class="col-12 col-md-6 tile p-5">
+    <div class="h3">
+      {{ item?.companyName }}
+    </div>
+    <div class="text-muted">
+      {{ item?.placeJob }}
+    </div>
+    <mat-divider class="my-2"></mat-divider>
+    <div>
+      <span class="lead" [innerHTML]="item?.description">
+      </span>
+    </div>
+  </div>
+</ng-template>
+
+<mat-card class="mat-mdc-elevation-specific mat-elevation-z6 overflow-hidden">
+  <div *ngFor="let item of experience; let i = index" class="row">
+    <ng-container *ngTemplateOutlet="i % 2 ? left : right; context: { $implicit: item }">
+    </ng-container>
+  </div>
+</mat-card>

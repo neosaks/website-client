@@ -1,0 +1,133 @@
+<header class="mat-mdc-elevation-specific mat-elevation-z2 overflow-hidden">
+  <!-- Snow -->
+  <div class="snow"></div>
+  <!-- /Snow -->
+  <!-- Circles -->
+  <!-- <ul class="circles">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul> -->
+  <!-- /Circles -->
+  <div class="container">
+    <div class="row align-items-center py-4">
+      <div class="resume-header-headline col-6 text-white p-1">
+        <div class="h2">{{ resume?.personalData?.name_en }}</div>
+        <div class="display-5 fs-5">{{ resume?.personalData?.profession_en }}</div>
+      </div>
+      <div class="col-6 text-end">
+        <a
+          *ngFor="let button of resume?.buttons"
+          mat-mini-fab
+          class="m-1 text-white"
+          color="primary"
+          target="_blank"
+          [matTooltip]="button.hint"
+          [href]="button.link"
+        >
+          <i [class]="button.icon"></i>
+        </a>
+
+        <button mat-mini-fab color="primary" class="m-1" matTooltip="Открыть в PDF" (click)="toPDF()">
+          <i class="fa-solid fa-file-pdf"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="resume-content-container">
+  <!-- Section: Person -->
+  <section class="container pb-5">
+    <div class="row">
+      <div class="col-12">
+        <app-personal-card
+          [buttons]="resume?.buttons"
+          [name]="resume?.personalData?.name_ru"
+          [profession]="resume?.personalData?.profession_ru"
+          [address]="resume?.personalData?.address"
+          [dob]="resume?.personalData?.dob"
+          [phoneNumber]="resume?.personalData?.phoneNumber"
+          [email]="resume?.personalData?.email"
+          [salary]="resume?.personalData?.salary"
+          [imageUrl]="resume?.personalData?.imageUrl"
+          (toPDF)="toPDF()"
+        ></app-personal-card>
+      </div>
+    </div>
+  </section>
+  <!-- Section: Intro -->
+  <section class="container pb-5">
+    <div class="row">
+      <div class="col-12">
+        <app-about-card [html]="resume?.about"></app-about-card>
+      </div>
+    </div>
+  </section>
+  <!-- Sections: Skills -->
+  <section class="container">
+    <div class="row">
+      <div class="col-12 col-md-6 pb-5">
+        <app-skill-spinners [skills]="resume?.skills"></app-skill-spinners>
+      </div>
+      <div class="col-12 col-md-6 pb-5">
+        <app-skill-progress-bars [skills]="resume?.tools"></app-skill-progress-bars>
+      </div>
+    </div>
+  </section>
+  <!-- Section: Brands -->
+  <section class="resume-brands-section py-5">
+    <div class="marquee">
+      <span class="marquee__content" aria-hidden="true">
+        <i *ngFor="let brand of resume?.brands" [ngClass]="brand.cssClass" class="mx-4"></i>
+      </span>
+  
+      <span class="marquee__content" aria-hidden="true">
+        <i *ngFor="let brand of resume?.brands" [ngClass]="brand.cssClass" class="mx-4"></i>
+      </span>
+    </div>
+  </section>
+  <!-- Section: Experience -->
+  <section class="container py-5">
+    <div class="row">
+      <div class="col-12">
+        <app-experience-card [experience]="resume?.experience"></app-experience-card>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="mat-mdc-elevation-specific mat-elevation-z2 overflow-hidden pt-5">
+  <!-- Snow -->
+  <div class="snow"></div>
+  <!-- /Snow -->
+  <!-- Circles -->
+  <!-- <ul class="circles">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul> -->
+  <!-- /Circles -->
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-3"></div>
+      <div class="col-3"></div>
+      <div class="col-3"></div>
+      <div class="col-3"></div>
+    </div>
+  </div>
+</footer>

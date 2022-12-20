@@ -1,0 +1,15 @@
+mat-card > .row {
+  min-height: 430px;
+}
+
+.tile {
+  min-height: 400px;
+
+  img {
+    transition: .5s;
+  }
+
+  img:hover {
+    transform: scale(1.05);
+  }
+}
