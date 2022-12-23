@@ -41,10 +41,10 @@ const ABOUT = `
 `;
 
 /**************************************************
- * SHAREING_EXP_DESCRIPTION
+ * SHARING_EXP_DESCRIPTION
  **************************************************/
 
-const SHAREING_EXP_DESCRIPTION = `
+const SHARING_EXP_DESCRIPTION = `
 <p>
   Разрабатывал <b>архитектуру</b> и базовые компоненты для клиентской части <b>CRM</b>
   нового поколения на базе <b>Angular 12</b>.
@@ -226,7 +226,7 @@ export const MAXIM_CHICHKANOV_RESUME: ResumeDto = {
       companyName: 'Шеринговые технологии',
       startDate: 1609448400, // 2021
       endDate: 1640984400, // 2022
-      description: SHAREING_EXP_DESCRIPTION
+      description: SHARING_EXP_DESCRIPTION
     },
     {
       imageUrl: '/assets/images/sharing.webp',
