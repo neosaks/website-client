@@ -1,4 +1,4 @@
-<mat-card class="resume-skills-card mat-mdc-elevation-specific mat-elevation-z6 overflow-hidden h-100">
+<mat-card class="mat-elevation-z6 overflow-hidden h-100">
   <mat-card-header>
     <mat-card-title>Фреймворки</mat-card-title>
     <mat-card-subtitle>Frameworks</mat-card-subtitle>
@@ -6,14 +6,14 @@
   <mat-divider class="mx-3"></mat-divider>
   <mat-card-content class="my-4 h-100">
     <div class="row d-flex flex-column justify-content-evenly h-100">
-      <div *ngFor="let skill of skills" class="col-12">
+      <div *ngFor="let tool of tools" class="col-12">
         <span class="d-flex justify-content-between">
-          <b>{{ skill.title }}</b>
+          <b>{{ tool.title }}</b>
           <small class="text-muted">
-            {{ skill.progress }}%
+            {{ tool.progress }}%
           </small>
         </span>
-        <mat-progress-bar [value]="skill.progress" mode="determinate"></mat-progress-bar>
+        <mat-progress-bar [value]="tool.progress" mode="determinate"></mat-progress-bar>
       </div>
     </div>
   </mat-card-content>

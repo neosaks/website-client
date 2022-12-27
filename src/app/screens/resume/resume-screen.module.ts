@@ -18,7 +18,7 @@ import { ResumeScreenComponent } from './resume-screen.component';
 import { AboutCardComponent } from './components/about-card/about-card.component';
 import { ExperienceScreenComponent } from './components/experience-card/experience-card.component';
 import { PersonalCardComponent } from './components/personal-card/personal-card.component';
-import { SkillProgressBarsComponent } from './components/skill-progress-bars/skill-progress-bars.component';
+import { ToolProgressBarsComponent } from './components/tool-progress-bars/tool-progress-bars.component';
 import { SkillSpinnersComponent } from './components/skill-spinners/skill-spinners.component';
 
 @NgModule({
@@ -27,7 +27,7 @@ import { SkillSpinnersComponent } from './components/skill-spinners/skill-spinne
     AboutCardComponent,
     ExperienceScreenComponent,
     PersonalCardComponent,
-    SkillProgressBarsComponent,
+    ToolProgressBarsComponent,
     SkillSpinnersComponent
   ],
   exports: [ResumeScreenComponent],

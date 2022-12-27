@@ -1,5 +1,6 @@
 import { ResumePersonalData } from './resume-personal-data.interface';
 import { ResumeSkill } from './resume-skill.interface';
+import { ResumeTool } from './resume-tool.interface';
 import { ResumeButton } from './resume-button.interface';
 import { ResumeBrand } from './resume-brand.interface';
 import { ResumeExperience } from './resume-experience.interface';
@@ -12,7 +13,7 @@ export interface ResumeDto {
   /** Профессиональные навыки */
   skills: ResumeSkill[];
   /** Профессиональные инструменты */
-  tools: ResumeSkill[];
+  tools: ResumeTool[];
   /** Информация о себе (пользователе) */
   about: string;
   /** Список брендов используемых технологий */
