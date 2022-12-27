@@ -36,7 +36,7 @@
   </div>
 </ng-template>
 
-<mat-card class="mat-mdc-elevation-specific mat-elevation-z6 overflow-hidden">
+<mat-card class="mat-elevation-z6 overflow-hidden">
   <div *ngFor="let item of experience; let i = index" class="row">
     <ng-container *ngTemplateOutlet="i % 2 ? left : right; context: { $implicit: item }">
     </ng-container>
