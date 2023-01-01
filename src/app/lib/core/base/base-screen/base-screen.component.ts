@@ -20,17 +20,17 @@ export abstract class BaseScreenComponent implements OnInit, OnDestroy {
    * Предыдущее состояние оболочки. Используется для возвращения оболочки
    * в исходное состоянии перед деструктуризацией компонента экрана.
    */
-  private _shellConfig?: IShellState | Partial<IShellState>;
+  private _shellState?: IShellState | Partial<IShellState>;
 
   /** @inheritdoc */
   ngOnInit(): void {
-    this._shellConfig = this._updateShell();
+    this._shellState = this._updateShell();
   }
 
   /** @inheritdoc */
   ngOnDestroy(): void {
-    if (this._shellConfig) {
-      this._shell.changeState(this._shellConfig);
+    if (this._shellState) {
+      this._shell.changeState(this._shellState);
     }
 
     this._ngUnsubscribe$.next();
