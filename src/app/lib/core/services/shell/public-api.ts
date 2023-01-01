@@ -1,3 +1,3 @@
-export * from './shell-config.interface';
-export * from './shell-main-config.service';
+export * from './shell-state.interface';
+export * from './shell-state.service';
 export * from './shell.service';

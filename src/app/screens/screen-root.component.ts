@@ -2,6 +2,10 @@ import { Component, ChangeDetectionStrategy, OnInit, PLATFORM_ID, Inject } from 
 import { DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { ShellService } from '@lib/core';
 
+declare class WOW {
+  init(): void;
+}
+
 @Component({
   selector: 'app-screen-root',
   templateUrl: './screen-root.component.html',
@@ -19,15 +23,21 @@ export class ScreenRootComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    const document = this._document;
-    const shell = this._shell;
     const platformId = this._platformId;
 
-    // Updating the page title if the shell state is changed
-    shell.stateChanged$.subscribe(() => {
-      if (isPlatformBrowser(platformId)) {
-        document.title = shell.main.appName || '';
+    if (isPlatformBrowser(platformId)) {
+      const document = this._document;
+      const shell = this._shell;
+
+      // Updating the page title if the shell state is changed
+      shell.stateChanged$.subscribe(() => {
+        document.title = shell.state.appName;
+      });
+
+      // Initialization WOW
+      if (WOW) {
+        new WOW().init();
       }
-    });
+    }
   }
 }

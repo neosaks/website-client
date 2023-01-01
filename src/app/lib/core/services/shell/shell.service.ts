@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
-import { ShellMainConfig } from './shell-main-config.service';
-import { IShellConfig } from './shell-config.interface';
+import { ShellStateService } from './shell-state.service';
+import { IShellState } from './shell-state.interface';
 
 /** Description */
 @Injectable({
@@ -12,28 +12,26 @@ export class ShellService {
   readonly stateChanged$ = new Subject<void>();
 
   /** Service constructor. */
-  constructor(readonly main: ShellMainConfig) {}
+  constructor(readonly state: ShellStateService) {}
 
   /** Description */
   changeState(
-    newState: IShellConfig,
+    newState: Partial<IShellState>,
     returnOnlyChangedValues?: true
-  ): Partial<IShellConfig>;
+  ): Partial<IShellState>;
 
   /** Description */
   changeState(
-    newState: IShellConfig,
+    newState: Partial<IShellState>,
     returnOnlyChangedValues?: false
-  ): IShellConfig;
+  ): IShellState;
 
   /** Description */
   changeState(
-    newState: IShellConfig = {},
+    newState: Partial<IShellState> = {},
     returnOnlyChangedValues = true
-  ): IShellConfig | Partial<IShellConfig> {
-    const oldState: IShellConfig = {
-      main: this.main.changeState(newState.main || {}, returnOnlyChangedValues),
-    };
+  ): IShellState | Partial<IShellState> {
+    const oldState = this.state.changeState(newState || {}, returnOnlyChangedValues);
 
     this.stateChanged$.next();
 

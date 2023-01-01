@@ -1,6 +1,6 @@
-import { Component, Injector, inject, OnDestroy, OnInit } from '@angular/core';
+import { Component, inject, OnDestroy, OnInit } from '@angular/core';
 import { Subject } from 'rxjs';
-import { ShellService, IShellConfig } from '../../services/shell';
+import { ShellService, IShellState } from '../../services/shell';
 
 /** Базовый класс компонента экрана */
 @Component({
@@ -20,7 +20,7 @@ export abstract class BaseScreenComponent implements OnInit, OnDestroy {
    * Предыдущее состояние оболочки. Используется для возвращения оболочки
    * в исходное состоянии перед деструктуризацией компонента экрана.
    */
-  private _shellConfig!: IShellConfig;
+  private _shellConfig?: IShellState | Partial<IShellState>;
 
   /** @inheritdoc */
   ngOnInit(): void {
@@ -29,16 +29,16 @@ export abstract class BaseScreenComponent implements OnInit, OnDestroy {
 
   /** @inheritdoc */
   ngOnDestroy(): void {
-    this._shell.changeState(this._shellConfig);
+    if (this._shellConfig) {
+      this._shell.changeState(this._shellConfig);
+    }
 
     this._ngUnsubscribe$.next();
     this._ngUnsubscribe$.complete();
   }
 
   /** Обновляет состояние оболочки */
-  private _updateShell(): IShellConfig {
-    return this._shell.changeState({
-      main: { appName: this.title },
-    });
+  private _updateShell(): IShellState | Partial<IShellState> {
+    return this._shell.changeState({ appName: this.title });
   }
 }
