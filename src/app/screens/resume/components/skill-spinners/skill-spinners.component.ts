@@ -1,5 +1,5 @@
 import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
-import { ResumeSkill } from '@http/backend/resume/interfaces/resume-skill.interface';
+import { IResumeSkill } from '@http/backend/resume/interfaces/resume-skill.interface';
 
 @Component({
   selector: 'app-skill-spinners',
@@ -10,5 +10,5 @@ import { ResumeSkill } from '@http/backend/resume/interfaces/resume-skill.interf
 /** Компонент карточки с навыками пользователя */
 export class SkillSpinnersComponent {
   @Input()
-  skills?: ResumeSkill[];
+  skills?: IResumeSkill[];
 }

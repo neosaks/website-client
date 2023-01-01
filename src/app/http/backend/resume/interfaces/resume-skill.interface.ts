@@ -1,4 +1,4 @@
-export interface ResumeSkill {
+export interface IResumeSkill {
   /** Название профессионального навыка */
   title: string;
   /** Уровень владения в процентах (от 0 до 100) */

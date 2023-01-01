@@ -1,4 +1,4 @@
-export interface ResumeButton {
+export interface IResumeButton {
   /** Текстовая метка кнопки */
   label: string;
   /** Ссылка (href) кнопки */

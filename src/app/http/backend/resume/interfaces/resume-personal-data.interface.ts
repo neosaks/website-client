@@ -1,4 +1,4 @@
-export interface ResumePersonalData {
+export interface IResumePersonalData {
   /** Имя на русском языке */
   name_ru: string;
   /** Имя на английском языке */

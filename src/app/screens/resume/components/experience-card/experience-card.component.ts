@@ -1,5 +1,5 @@
 import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
-import { ResumeExperience } from '@http/backend/resume/interfaces/resume-experience.interface';
+import { IResumeExperience } from '@http/backend/resume/interfaces/resume-experience.interface';
 
 @Component({
   selector: 'app-experience-card',
@@ -10,5 +10,5 @@ import { ResumeExperience } from '@http/backend/resume/interfaces/resume-experie
 /** Компонент карточки с описанием предыдущего опыта работы */
 export class ExperienceScreenComponent {
   @Input()
-  experience?: ResumeExperience[];
+  experience?: IResumeExperience[];
 }

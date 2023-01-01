@@ -1,4 +1,4 @@
-import { ResumeDto } from '../interfaces/resume-dto.interface';
+import { IResume } from '../interfaces/resume.interface';
 
 /**
  * ABOUT
@@ -104,7 +104,7 @@ const FREELANCE_EXP_DESCRIPTION = `
  * MAXIM_CHICHKANOV_RESUME
  **************************************************/
 
-export const MAXIM_CHICHKANOV_RESUME: ResumeDto = {
+export const MAXIM_CHICHKANOV_RESUME: IResume = {
   personalData: {
     name_ru: 'Максим Чичканов',
     name_en: 'Maxim Chichkanov',

@@ -1,5 +1,5 @@
 import { Component, ChangeDetectionStrategy, Input, Output, EventEmitter } from '@angular/core';
-import { ResumeButton } from '@http/backend/resume/interfaces/resume-button.interface';
+import { IResumeButton } from '@http/backend/resume/interfaces/resume-button.interface';
 
 import * as moment from 'moment';
 
@@ -33,7 +33,7 @@ export class PersonalCardComponent {
   public salary?: string;
 
   @Input()
-  public buttons?: ResumeButton[];
+  public buttons?: IResumeButton[];
 
   @Input()
   public imageUrl?: string;

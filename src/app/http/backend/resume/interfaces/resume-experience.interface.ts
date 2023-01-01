@@ -1,4 +1,4 @@
-export interface ResumeExperience {
+export interface IResumeExperience {
   /** Ссылка на изображение ассоциированное с опытом */
   imageUrl: string;
   /** Место работы (город или адрес) */

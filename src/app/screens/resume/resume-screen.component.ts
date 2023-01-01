@@ -1,7 +1,7 @@
 import { Component, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 import { BaseScreenComponent } from '@lib/core';
 import { ResumeService } from '@http/backend/resume/services/resume.service';
-import { ResumeDto } from '@http/backend/resume/interfaces/resume-dto.interface';
+import { IResume } from '@http/backend/resume/interfaces/resume.interface';
 
 @Component({
   selector: 'app-resume-screen',
@@ -15,7 +15,7 @@ export class ResumeScreenComponent extends BaseScreenComponent {
   protected title = 'Резюме - Загрузка данных...';
 
   /** Резюме */
-  protected resume?: ResumeDto;
+  protected resume?: IResume;
 
   constructor(private _cdr: ChangeDetectorRef, private _resumeService: ResumeService) {
     super();

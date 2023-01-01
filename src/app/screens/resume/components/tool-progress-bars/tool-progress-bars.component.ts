@@ -1,5 +1,5 @@
 import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
-import { ResumeTool } from '@http/backend/resume/interfaces/resume-tool.interface';
+import { IResumeTool } from '@http/backend/resume/interfaces/resume-tool.interface';
 
 @Component({
   selector: 'app-tool-progress-bars',
@@ -10,5 +10,5 @@ import { ResumeTool } from '@http/backend/resume/interfaces/resume-tool.interfac
 /** Компонент карточки со списком инструментов пользователя */
 export class ToolProgressBarsComponent {
   @Input()
-  tools?: ResumeTool[];
+  tools?: IResumeTool[];
 }
