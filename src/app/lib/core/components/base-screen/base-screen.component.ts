@@ -1,6 +1,7 @@
 import { Component, inject, OnDestroy, OnInit } from '@angular/core';
 import { Subject } from 'rxjs';
-import { ShellService, IShellState } from '../../services/shell';
+import { IShellState } from '../../interfaces/shell/shell-state.interface';
+import { ShellService } from '../../services/shell/shell.service';
 
 /** Базовый класс компонента экрана */
 @Component({

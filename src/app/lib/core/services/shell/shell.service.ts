@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
-import { ShellStateService } from './shell-state.service';
-import { IShellState } from './shell-state.interface';
+import { IShellState } from '../../interfaces/shell/shell-state.interface';
+import { ShellStateService } from '../shell-state/shell-state.service';
 
 /** Description */
 @Injectable({

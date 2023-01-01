@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { IShellState } from './shell-state.interface';
+import { IShellState } from '../../interfaces/shell/shell-state.interface';
 
 /**
  * Returns an object containing a list of `needleProps`
