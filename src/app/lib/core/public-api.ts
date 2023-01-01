@@ -1,4 +1,4 @@
-export * from './base/base-screen/base-screen.component';
+export * from './components/base-screen/base-screen.component';
 export * from './helpers/array-helper';
 export * from './helpers/is-empty';
 export * from './helpers/reactive-form-helper';
