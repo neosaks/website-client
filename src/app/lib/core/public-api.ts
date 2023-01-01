@@ -8,5 +8,6 @@ export * from './helpers/time-helper';
 export * from './helpers/type-converter';
 export * from './helpers/type-helper';
 export * from './helpers/url-helper';
+export * from './interfaces/shell-state/shell-state.interface';
 export * from './services/alias/alias.service';
-export * from './services/shell'; // barrel
+export * from './services/shell/shell.service';
