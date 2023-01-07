@@ -1,41 +1,22 @@
-import {
-  HttpErrorResponse,
-  HttpRequest,
-  HttpResponse,
-} from '@angular/common/http';
+import { HttpErrorResponse, HttpRequest } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { RequestEventsInterceptor } from '../../interceptors/request-events/request-events.interceptor';
 
-import { Observable, Subject } from 'rxjs';
+import { Observable } from 'rxjs';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class RequestEventsService {
-  get beforeRequest$(): Observable<HttpRequest<any>> {
-    return this._beforeRequest$.asObservable();
+  get beforeRequest$(): Observable<HttpRequest<unknown>> {
+    return this._requestEventsInterceptor.beforeRequest$;
   }
 
-  get afterRequest$(): Observable<HttpRequest<any>> {
-    return this._afterRequest$.asObservable();
+  get afterRequest$(): Observable<HttpRequest<unknown>> {
+    return this._requestEventsInterceptor.afterRequest$;
   }
 
-  get error$(): Observable<HttpErrorResponse> {
-    return this._error$.asObservable();
+  get httpError$(): Observable<HttpErrorResponse> {
+    return this._requestEventsInterceptor.httpError$;
   }
 
-  private readonly _beforeRequest$ = new Subject<HttpRequest<any>>();
-  private readonly _afterRequest$ = new Subject<HttpRequest<any>>();
-  private readonly _error$ = new Subject<HttpErrorResponse>();
-
-  _dispatchBeforeRequestEvent(request: HttpRequest<any>): void {
-    this._beforeRequest$.next(request);
-  }
-
-  _dispatchAfterRequestEvent(request: HttpRequest<any>): void {
-    this._afterRequest$.next(request);
-  }
-
-  _dispatchErrorRequestEvent(error: HttpErrorResponse): void {
-    this._error$.next(error);
-  }
+  constructor(private _requestEventsInterceptor: RequestEventsInterceptor) {}
 }
