@@ -4,11 +4,11 @@ import {
   FormControl,
   FormGroup,
 } from '@angular/forms';
-import { isObject } from './type-helper';
+import { isObject } from './type-guards';
 
 export class ReactiveFormHelper {
   static buildFormGroup(
-    object: Record<string, any>,
+    object: Record<string, unknown>,
     formGroup: FormGroup,
     replace = false
   ): void {
@@ -30,7 +30,7 @@ export class ReactiveFormHelper {
   }
 
   static buildFormArray(
-    array: any[],
+    array: unknown[],
     formArray: FormArray,
     replace = false
   ): void {

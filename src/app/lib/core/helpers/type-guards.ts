@@ -6,7 +6,7 @@ export function isBoolean(value: unknown): value is boolean {
   return typeof value === 'boolean';
 }
 
-export function isFunction(value: unknown): value is () => any {
+export function isFunction(value: unknown): value is () => unknown {
   return typeof value === 'function';
 }
 
@@ -14,7 +14,7 @@ export function isNumber(value: unknown): value is number {
   return typeof value === 'number';
 }
 
-export function isObject(value: unknown): value is Record<string, any> {
+export function isObject(value: unknown): value is Record<string, unknown> {
   return !!value && typeof value === 'object';
 }
 

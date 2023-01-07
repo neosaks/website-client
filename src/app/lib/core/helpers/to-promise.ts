@@ -1,6 +1,6 @@
 import { Observable } from 'rxjs';
 
-export async function toPromise<T>(observable: Observable<T>): Promise<T[]> {
+export function toPromise<T>(observable: Observable<T>): Promise<T[]> {
   return new Promise<T[]>((resolve, reject) => {
     const values: T[] = [];
     observable.subscribe({
